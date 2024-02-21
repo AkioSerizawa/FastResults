@@ -1,5 +1,7 @@
 # FastResults
 
+- [Documentação EN](https://github.com/AkioSerizawa/FastResults/blob/main/README.md)
+
 ---
 
 ## Pacote criado para auxiliar no desenvolvimento e gerenciamento de resultados da API ao longo da aplicação
