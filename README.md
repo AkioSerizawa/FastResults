@@ -2,7 +2,7 @@
 
 ---
 
-- [Documentation PT-BR]()
+- [Documentation PT-BR](https://github.com/AkioSerizawa/FastResults/blob/main/README-PT.md)
 
 ## Package created to assist in the development and management of API results throughout the application.
 
