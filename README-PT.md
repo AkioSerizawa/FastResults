@@ -1,6 +1,7 @@
 # FastResults
 
 - [Documentação EN](https://github.com/AkioSerizawa/FastResults/blob/main/README.md)
+- [NuGet](https://www.nuget.org/packages/FastResults)
 
 ---
 
