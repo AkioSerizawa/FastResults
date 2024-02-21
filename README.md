@@ -27,7 +27,7 @@ offering essential and standardized functionalities that facilitate code develop
 - This is the standard format for API responses, which includes two main properties:
   - **TResponse:** Represents the content of the response, which may vary depending on the context of the request.
   - **[Error](#error):** Error displayed on the screen for the user.
-  - 
+    
 ### BaseController:
 
 The BaseController is an abstract class that serves as a fundamental structure for controllers in the application. 
