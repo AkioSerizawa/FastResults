@@ -6,7 +6,8 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>FastResults</Title>
     <Company>Akio Serizawa</Company>
-    <Description>Package created to assist in API developments and results traversed during application</Description>
+    <Description>Package created to assist in the development and management of API results throughout the application.
+This package was designed based on three fundamental pillars for the application: Controller, Response, Error, and Result between layers.</Description>
     <Authors>Akio Serizawa</Authors>
     <PackageIcon>fast-delivery.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -14,9 +15,11 @@
     <PackageTags>fast-code</PackageTags>
     <PackAsTool>False</PackAsTool>
     <NeutralLanguage>pt-BR</NeutralLanguage>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryType>git</RepositoryType>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,7 +31,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="C:\Users\Akio\Downloads\fast-delivery.png">
+    <None Include="Icons\fast-delivery.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -38,4 +41,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Icons\" />
+  </ItemGroup>
+  
 </Project>
