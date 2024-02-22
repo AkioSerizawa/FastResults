@@ -61,7 +61,7 @@ it is possible to ensure efficient and reliable data exchange between different 
 --- 
 
 ## Implementantion
-```.ASP.NET (C#)
+```csharp
 [Route("[controller]")]
 public class HomeController : BaseController
 {
@@ -101,5 +101,6 @@ public class ProductServices()
 
 public record ProductDto(
     Guid Id,
-    string Name);
+    string Name
+);
 ```
