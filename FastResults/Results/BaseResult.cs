@@ -1,4 +1,6 @@
-﻿using FastResults.Errors;
+﻿using System.Collections.Generic;
+using FastResults.Errors;
+using FluentValidation.Results;
 
 namespace FastResults.Results
 {
@@ -44,7 +46,8 @@ namespace FastResults.Results
         /// </summary>
         /// <typeparam name="TValue">The type of value.</typeparam>
         /// <param name="value">The value.</param>
-        public static BaseResult<TValue> Sucess<TValue>(TValue value) => new BaseResult<TValue>(value, true, Error.None);
+        public static BaseResult<TValue> Sucess<TValue>(TValue value) =>
+            new BaseResult<TValue>(value, true, Error.None);
 
         #endregion Success
 
@@ -63,11 +66,19 @@ namespace FastResults.Results
         public static BaseResult Failure(Error error) => new BaseResult(false, error);
 
         /// <summary>
+        /// Creates a failure result with the specified error information.
+        /// </summary>
+        /// <param name="validationFailures">The error information.</param>
+        public static BaseResult Failure(IEnumerable<ValidationFailure> validationFailures) =>
+            new BaseResult(false, Error.CreateErrorValidation(validationFailures));
+
+        /// <summary>
         /// Creates a failure result with the specified error message and default value.
         /// </summary>
         /// <typeparam name="TValue">The type of value.</typeparam>
         /// <param name="message">The error message.</param>
-        public static BaseResult<TValue> Failure<TValue>(string message) => new BaseResult<TValue>(default, false, new Error(message));
+        public static BaseResult<TValue> Failure<TValue>(string message) =>
+            new BaseResult<TValue>(default, false, new Error(message));
 
         /// <summary>
         /// Creates a failure result with the specified error information and default value.
@@ -75,6 +86,13 @@ namespace FastResults.Results
         /// <typeparam name="TValue">The type of value.</typeparam>
         /// <param name="error">The error information.</param>
         public static BaseResult<TValue> Failure<TValue>(Error error) => new BaseResult<TValue>(default, false, error);
+
+        /// <summary>
+        /// Creates a failure result with the specified error information.
+        /// </summary>
+        /// <param name="validationFailures">The error information.</param>
+        public static BaseResult<TValue> Failure<TValue>(IEnumerable<ValidationFailure> validationFailures) =>
+            new BaseResult<TValue>(default, false, Error.CreateErrorValidation(validationFailures));
 
         #endregion Failure
 
@@ -89,5 +107,4 @@ namespace FastResults.Results
 
         #endregion Methods
     }
-
 }

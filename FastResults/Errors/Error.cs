@@ -1,7 +1,9 @@
 ﻿using FastResults.Enums;
 using FastResults.Extensions;
 using System;
+using System.Collections.Generic;
 using System.Net;
+using FluentValidation.Results;
 
 namespace FastResults.Errors
 {
@@ -70,6 +72,20 @@ namespace FastResults.Errors
         /// Represents an empty error entity.
         /// </summary>
         public static readonly Error None = new Error(HttpStatusCode.NoContent, string.Empty, TypeError.None);
+
+        /// <summary>
+        /// Created error fluent validation
+        /// </summary>
+        public static Error CreateErrorValidation(IEnumerable<ValidationFailure> validationsFailures)
+        {
+            string messageError = string.Empty;
+            foreach (ValidationFailure validation in validationsFailures)
+            {
+                messageError += string.Join(",", validation.ErrorMessage);
+            }
+
+            return new Error(HttpStatusCode.NotFound, messageError, TypeError.Validation);
+        }
 
         #endregion Methods
     }

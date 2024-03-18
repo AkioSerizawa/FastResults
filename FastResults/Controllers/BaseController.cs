@@ -23,12 +23,12 @@ namespace FastResults.Controllers
             BaseResult result,
             string message = "",
             HttpStatusCode httpStatus = HttpStatusCode.OK,
-            HttpStatusCode httoStatusError = HttpStatusCode.NotFound)
+            HttpStatusCode httpStatusError = HttpStatusCode.NotFound)
         {
             if (result.IsFailure)
             {
-                result.Error.StatusCode = httoStatusError;
-                return StatusCode((int)httoStatusError, new BaseResponse<Error>(result.Error));
+                result.Error.StatusCode = httpStatusError;
+                return StatusCode((int)httpStatusError, new BaseResponse<Error>(result.Error));
             }
 
             return StatusCode((int)httpStatus, new BaseResponse<string>(message));
@@ -45,12 +45,12 @@ namespace FastResults.Controllers
         protected new ActionResult Response<TValue>(
         BaseResult<TValue> result,
         HttpStatusCode httpStatus = HttpStatusCode.OK,
-        HttpStatusCode httoStatusError = HttpStatusCode.NotFound)
+        HttpStatusCode httpStatusError = HttpStatusCode.NotFound)
         {
             if (result.IsFailure)
             {
-                result.Error.StatusCode = httoStatusError;
-                return StatusCode((int)httoStatusError, new BaseResponse<Error>(result.Error));
+                result.Error.StatusCode = httpStatusError;
+                return StatusCode((int)httpStatusError, new BaseResponse<Error>(result.Error));
             }
 
             return StatusCode((int)httpStatus, new BaseResponse<TValue>(result.Value));
