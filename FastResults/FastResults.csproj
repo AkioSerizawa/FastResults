@@ -15,12 +15,12 @@ This package was designed based on three fundamental pillars for the application
     <PackageTags>fast-code</PackageTags>
     <PackAsTool>False</PackAsTool>
     <NeutralLanguage>pt-BR</NeutralLanguage>
-    <AssemblyVersion>1.0.2</AssemblyVersion>
-    <FileVersion>1.0.2</FileVersion>
+    <AssemblyVersion>1.0.3</AssemblyVersion>
+    <FileVersion>1.0.3</FileVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryType>git</RepositoryType>
-    <Version>1.0.2</Version>
-    <PackageReleaseNotes>Added error types per enum</PackageReleaseNotes>
+    <Version>1.0.3</Version>
+    <PackageReleaseNotes>Added FluentValidation</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
